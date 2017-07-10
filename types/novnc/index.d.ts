@@ -40,8 +40,8 @@ interface NvCleanDirtyBox {
 interface NvUtilStatic {
 	init_logging(level?: string): void;
 	get_logging(): string;
-	conf_default(cfg, api, defaults, v, mode, type, defval, desc): void;
-	conf_defaults(cfg, api, defaults, arr): void;
+	conf_default(cfg: any, api: any, defaults: any, v: any, mode: any, type: any, defval: any, desc: any): void;
+	conf_defaults(cfg: any, api: any, defaults: any, arr: any): void;
 	get_include_uri(): string;
 	load_scripts(files: string[]): void;
 	getPosition(obj: HTMLElement): NvPoint;
@@ -88,8 +88,8 @@ interface NvRFBDefaults {
 }
 
 declare class RFB {
-	constructor(defaults);
-	set_local_cursor(cursor): void;
+	constructor(defaults: any);
+	set_local_cursor(cursor: any): void;
 	get_display(): Display;
 	get_keyboard(): Keyboard;
 	get_mouse(): Mouse;
@@ -115,10 +115,10 @@ interface Display {
 	absY(y: number): number;
 	resize(width: number, height: number): void;
 	clear(): void;
-	fillRect(x: number, y: number, width: number, height: number, color: number[]);
-	copyImage(old_x: number, old_y: number, new_x: number, new_y: number, w: number, h: number);
-	startTile(x: number, y: number, width: number, height: number, color: number[]);
-	subTile(x: number, y: number, w: number, h: number, color: number[]);
+	fillRect(x: number, y: number, width: number, height: number, color: number[]): void;
+	copyImage(old_x: number, old_y: number, new_x: number, new_y: number, w: number, h: number): void;
+	startTile(x: number, y: number, width: number, height: number, color: number[]): void;
+	subTile(x: number, y: number, w: number, h: number, color: number[]): void;
 	finishTile(): void;
 	blitImage(x: number, y: number, width: number, height: number, arr: any[], offset: number): void;
 	blitRgbImage(x: number, y: number, width: number, height: number, arr: any[], offset: number): void;
